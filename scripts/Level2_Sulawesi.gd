@@ -70,6 +70,10 @@ func _ready():
 	
 	if not level_completed:
 		initialize_level()
+	
+	# Connect signals
+	next_island_btn.pressed.connect(_on_next_island_btn_pressed)
+	restart_btn.pressed.connect(_on_restart_btn_pressed)
 
 # 🆕 Method untuk menerima Main reference dari Main.gd
 func set_main_reference(main_reference):
@@ -747,27 +751,18 @@ func show_result_screen(stars: int, points: int, is_success: bool):
 		result_label.modulate = Color(1, 0.7, 0.7)
 		restart_btn.show()
 
-# 🎯 PERBAIKAN KRITIS: Fungsi kembali ke peta
+# 🎯 PERBAIKAN UTAMA: Fungsi kembali ke peta yang lebih stabil
 func _on_next_island_btn_pressed():
-	print("🗺️ Returning to Map from Sulawesi Level 2...")
-	print("🔍 Progress saved:", progress_saved)
-	print("🔍 Level completed:", level_completed)
+	print("🗺️ _on_next_island_btn_pressed() - Returning to Map")
+	print("📊 Progress saved:", progress_saved)
+	print("📊 Level completed:", level_completed)
 	
-	# 🎯 PRIORITAS 1: Gunakan Main node jika ada
-	if main_node and main_node.has_method("show_map"):
-		print("✅ Using Main.show_map()")
-		main_node.show_map()
-		return
+	# 🚨 CRITICAL: Nonaktifkan button untuk mencegah double click
+	next_island_btn.disabled = true
+	restart_btn.disabled = true
 	
-	# 🎯 PRIORITAS 2: Cari Main node lagi
-	find_main_node()
-	if main_node and main_node.has_method("show_map"):
-		print("✅ Found Main node, using show_map()")
-		main_node.show_map()
-		return
-	
-	# 🎯 PRIORITAS 3: Direct scene change dengan cleanup
-	print("⚠️ Using direct scene change with cleanup")
+	# 🎯 OPTION 1: Gunakan change_scene_to_file - PALING STABIL
+	print("🔄 Using get_tree().change_scene_to_file()")
 	
 	# Pastikan progress tersimpan
 	if not progress_saved and level_completed:
@@ -775,13 +770,10 @@ func _on_next_island_btn_pressed():
 		var knowledge_points = calculate_knowledge_points()
 		manual_save_progress(stars, knowledge_points)
 	
-	# Cleanup sebelum keluar
-	cleanup_before_exit()
-	
-	# Delay kecil sebelum pindah scene
+	# Delay kecil untuk memastikan save selesai
 	await get_tree().create_timer(0.1).timeout
 	
-	# Pindah ke MapScene
+	# Direct scene transition - metode paling reliable
 	get_tree().change_scene_to_file("res://scenes/MapScene.tscn")
 
 func _on_restart_btn_pressed():
@@ -849,26 +841,20 @@ func show_already_completed_screen():
 
 # 🆕 Cleanup function untuk scene management
 func cleanup_before_exit():
-	print("🧹 Cleaning up Level2_Sulawesi resources...")
+	print("🧹 cleanup_before_exit() called")
 	
-	# Nonaktifkan processing
-	set_process(false)
-	set_physics_process(false)
-	set_process_input(false)
-	
-	# Clear semua arrays
+	# Clear semua arrays dan references
 	draggable_buttons.clear()
 	sequence_slots.clear()
 	slot_text_panels.clear()
+	current_story = null
+	main_node = null
 	
 	# Disconnect signals
 	if next_island_btn and next_island_btn.pressed.is_connected(_on_next_island_btn_pressed):
 		next_island_btn.pressed.disconnect(_on_next_island_btn_pressed)
 	if restart_btn and restart_btn.pressed.is_connected(_on_restart_btn_pressed):
 		restart_btn.pressed.disconnect(_on_restart_btn_pressed)
-	
-	# Clear references
-	main_node = null
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -886,6 +872,3 @@ func _exit_tree():
 	print("   Attempts:", current_attempts)
 	print("   Progress saved:", progress_saved)
 	print("   Main node available:", main_node != null)
-	
-	# Cleanup
-	cleanup_before_exit()

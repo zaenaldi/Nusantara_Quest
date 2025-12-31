@@ -81,7 +81,7 @@ var main_node_reference = null
 
 func _ready():
 	print("🎮 Nusantara Quest - Main System STARTING...")
-	print("🎯 Version 3.0 - Fixed Scene Management & Main Node Persistence")
+	print("🎯 Version 3.2 - Enhanced Scene Management")
 	
 	# 🆕 Simpan reference ke diri sendiri
 	main_node_reference = self
@@ -127,13 +127,13 @@ func create_loading_screen():
 	label.anchor_right = 0.5
 	label.anchor_bottom = 0.5
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	label.add_theme_font_size_override("font_size", 20)
 	label.add_theme_color_override("font_color", Color.WHITE)
 	
 	loading_screen.add_child(label)
 	ui_layer.add_child(loading_screen)
 
-# ================= 🎯 PERBAIKAN KRITIS: SCENE MANAGEMENT =================
 func show_opening_scene():
 	print("🎯 Loading OpeningScene...")
 	change_scene("res://scenes/OpeningScene.tscn")
@@ -200,7 +200,7 @@ func start_island_level_2(island_id: String):
 		print("❌ Island locked:", island_id)
 		show_map()
 
-# 🎯 PERBAIKAN KRITIS: change_scene() YANG LEBIH ROBUST
+# 🎯 PERBAIKAN KRITIS: change_scene() dengan cleanup yang lebih baik
 func change_scene(scene_path: String):
 	if is_changing_scene:
 		print("⚠️ Already in the process of changing scene, ignoring:", scene_path)
@@ -209,20 +209,14 @@ func change_scene(scene_path: String):
 	is_changing_scene = true
 	print("🔄 change_scene() STARTED for:", scene_path)
 	
-	# 🆕 Debug info
-	print("   Scene container has", scene_container.get_child_count(), "children")
-	if scene_container.get_child_count() > 0:
-		for i in range(scene_container.get_child_count()):
-			var child = scene_container.get_child(i)
-			print("   Child", i, ":", child.name, "(", child.get_class(), ")")
-	
 	# Show loading screen
 	show_loading_screen()
 	
 	# 🆕 Force frame process
 	await get_tree().process_frame
+	await get_tree().create_timer(0.05).timeout
 	
-	# 🆕 CLEAN UP SCENE CONTAINER DENGAN CARA YANG AMAN
+	# 🆕 CLEAN UP SCENE CONTAINER
 	if scene_container:
 		print("🧹 Cleaning up scene container...")
 		
@@ -234,8 +228,6 @@ func change_scene(scene_path: String):
 			# 🆕 Panggil cleanup method jika ada
 			if child.has_method("cleanup_before_exit"):
 				child.cleanup_before_exit()
-			elif child.has_method("_exit_tree"):
-				child._exit_tree()
 			
 			# Nonaktifkan node
 			child.set_process(false)
@@ -247,12 +239,6 @@ func change_scene(scene_path: String):
 			child.queue_free()
 		
 		print("   Scene container cleared")
-	
-	# 🆕 Force garbage collection delay
-	if OS.has_feature("standalone"):
-		OS.delay_msec(50)
-	
-	await get_tree().create_timer(0.05).timeout
 	
 	# Load scene baru
 	print("📦 Loading new scene:", scene_path)
@@ -271,7 +257,6 @@ func change_scene(scene_path: String):
 		
 		print("✅ Scene loaded and added:", new_scene.name)
 		print("   Scene type:", new_scene.get_class())
-		print("   Scene container now has", scene_container.get_child_count(), "children")
 		
 		# 🆕 Force scene to be ready
 		await get_tree().process_frame
@@ -646,6 +631,28 @@ func print_scene_tree():
 # 🆕 Method untuk mendapatkan Main node
 func get_main_node():
 	return self
+
+# ================= 🆕 ENHANCED SCENE MANAGEMENT =================
+func show_map_with_cleanup():
+	print("🗺️ show_map_with_cleanup() called")
+	
+	# Cleanup current scene
+	if current_active_scene:
+		print("🧹 Cleaning up current scene:", current_active_scene.name)
+		if current_active_scene.has_method("cleanup_before_exit"):
+			current_active_scene.cleanup_before_exit()
+	
+	# Reset scene container
+	if scene_container:
+		for child in scene_container.get_children():
+			scene_container.remove_child(child)
+			child.queue_free()
+	
+	current_active_scene = null
+	
+	# Load map
+	await get_tree().create_timer(0.1).timeout
+	show_map()
 
 # ================= DEBUG KEYS =================
 func _input(event):
