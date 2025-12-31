@@ -1,0 +1,87 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1767196629
+export_presets.cfg::TextFile::-1::1766486864::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::3021261885144756486::1762933722::1762933738::1::::<><><>0<>0<>460a1101efb2654b1ff5d9d87cbd768d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://assets/::1762934770
+::res://assets/audio/::1766913524
+fuu.mp3::AudioStreamMP3::3297797983116391534::1766912910::1766913524::1::::<><><>0<>0<>90ab18b9a5e3c97c1f146a4d8569c010<>res://.godot/imported/fuu.mp3-af4d887fb45f195994c0c94f87f49433.mp3str::
+gundul_gundul_pacul.mp3::AudioStreamMP3::1741220526308346862::1764117449::1764119618::1::::<><><>0<>0<>48e57109ba1b5d6225fb64b4323cc3f0<>res://.godot/imported/gundul_gundul_pacul.mp3-dcb54958edbb12259a67d1a18c6d2183.mp3str::
+tifa.mp3::AudioStreamMP3::5110157265948973020::1766912750::1766913524::1::::<><><>0<>0<>40d19eaac8374782f4df59093207b1c7<>res://.godot/imported/tifa.mp3-36bca8595992d1924b6e87612cd322a1.mp3str::
+::res://assets/images/::1766912190
+openscane.png::CompressedTexture2D::9089429092913322441::1762957273::1762957278::1::::<><><>0<>0<>63fdab4be237397347918094f0c92236<>res://.godot/imported/openscane.png-f9301d686ab842524b9918d11e62e178.ctex::
+::res://assets/images/animals/::1762934909
+::res://assets/images/backgrounds/::1766912192
+background.png::CompressedTexture2D::7407742734766104330::1762954566::1762963759::1::::<><><>0<>0<>b4fcbfba894bc5c1359142ae0e099d27<>res://.godot/imported/background.png-340dd6794313ff977f89f97a67009251.ctex::
+Gemini_Generated_Image_3ku69v3ku69v3ku6.png::CompressedTexture2D::6203148973462023518::1764119337::1764119745::1::::<><><>0<>0<>7036b1051a7ca5ac26b1678ab7001119<>res://.godot/imported/Gemini_Generated_Image_3ku69v3ku69v3ku6.png-fc268c6f147162a9e7f4451bf151fc3d.ctex::
+Gemini_Generated_Image_9h59vc9h59vc9h59.png::CompressedTexture2D::3380227199072755565::1766912139::1766912192::1::::<><><>0<>0<>952be1baa772c613f6d1a76eafb5754c<>res://.godot/imported/Gemini_Generated_Image_9h59vc9h59vc9h59.png-273aa1aae575bfb2e2bda5fab410ca92.ctex::
+Gemini_Generated_Image_51eeeu51eeeu51ee.png::CompressedTexture2D::6897468463165960163::1763990483::1763990523::1::::<><><>0<>0<>072adf99566fab0d25398d74dd2163bd<>res://.godot/imported/Gemini_Generated_Image_51eeeu51eeeu51ee.png-5bb8862a6666b3a5548bbb3b1587cb5d.ctex::
+Gemini_Generated_Image_bilcfvbilcfvbilc.png::CompressedTexture2D::3744685988232311551::1766894822::1766894860::1::::<><><>0<>0<>acfece351ca799860831712f6d47ee52<>res://.godot/imported/Gemini_Generated_Image_bilcfvbilcfvbilc.png-bf4034a7f6e12efc5dd3ef6e21a85264.ctex::
+Gemini_Generated_Image_nm593knm593knm59.png::CompressedTexture2D::6784674757474135928::1766705861::1766706415::1::::<><><>0<>0<>b69f65c62da5d69bb43caa0ef84a126e<>res://.godot/imported/Gemini_Generated_Image_nm593knm593knm59.png-f63c5b8d4641aebf912f50f0818122bd.ctex::
+::res://assets/images/characters/::1762994297
+Gemini_Generated_Image_w8td87w8td87w8td-removebg-preview.png::CompressedTexture2D::5996225877147960034::1762941266::1762994297::1::::<><><>0<>0<>69d1ca316539c7225af906067ba20483<>res://.godot/imported/Gemini_Generated_Image_w8td87w8td87w8td-removebg-preview.png-16c0c91983d798b40321c2d1809cd802.ctex::
+::res://assets/images/dances/::1762934922
+::res://assets/images/islands/::1762934885
+::res://assets/images/puzzles/::1766925586
+cendrawasih.png::CompressedTexture2D::387114030603874266::1766925380::1766925586::1::::<><><>0<>0<>2c9b70d668817e0e004019d106ee5119<>res://.godot/imported/cendrawasih.png-4f92f29457787d42c630017124b47596.ctex::
+ikan_pelangi.png::CompressedTexture2D::863251469295388418::1766925400::1766925586::1::::<><><>0<>0<>7c3fb76d4cfd08ab57128a4a16f92774<>res://.godot/imported/ikan_pelangi.png-b297504eea29462e06bb97d8851a05bc.ctex::
+kangguru_pohon.png::CompressedTexture2D::6404109163543661642::1766925391::1766925586::1::::<><><>0<>0<>9cd6b1769f26e9c6348bdc95a5769da9<>res://.godot/imported/kangguru_pohon.png-dac80080655f6017479efe56c64467f7.ctex::
+kasuari.png::CompressedTexture2D::820487202441206724::1766925386::1766925586::1::::<><><>0<>0<>bdab6b64c0410c1148be0284c5c8bfe3<>res://.godot/imported/kasuari.png-98e3eca468920ae9d54440724c18c52e.ctex::
+mambruk.png::CompressedTexture2D::2023167748646370737::1766925396::1766925586::1::::<><><>0<>0<>4b29b014762cc47e0453fdfaf6a90ac4<>res://.godot/imported/mambruk.png-f377ef9d6bb667d653dd7a702595a4f0.ctex::
+step1.png::CompressedTexture2D::1451790416148108709::1766897352::1766899694::1::::<><><>0<>0<>71d6411d811babf3ad642bc47f0c279e<>res://.godot/imported/step1.png-7d8ce1422c30aa1ab8c5a4a698e5ad63.ctex::
+step2.png::CompressedTexture2D::592366768452547036::1766897374::1766899694::1::::<><><>0<>0<>b65b178f8e5600b03de17d7550c75a1c<>res://.godot/imported/step2.png-68bdeb11dfa748e5abab5acdb6559047.ctex::
+step3.png::CompressedTexture2D::646361279414781674::1766897379::1766899694::1::::<><><>0<>0<>5ed89c774f13a6a2c34c43737d1bd6b3<>res://.godot/imported/step3.png-91c8e98bc7ca6ec085346d8a3a147a52.ctex::
+step4.png::CompressedTexture2D::5268681585559495671::1766897409::1766899694::1::::<><><>0<>0<>f91db9afb193ed5463cd67131d137872<>res://.godot/imported/step4.png-38e190e53b53e3687c6578e9d0fa2d72.ctex::
+step5.png::CompressedTexture2D::296567667695301107::1766897390::1766899694::1::::<><><>0<>0<>793940a7c6ba44fdb0801e53d89e83ff<>res://.godot/imported/step5.png-e2812316939478259a239c6ba5467d14.ctex::
+sumatera_house_blur.jpg::CompressedTexture2D::2589982964082836200::1764032754::1764032760::1::::<><><>0<>0<>662a4b364d9a6711631dd3b0c82f6cab<>res://.godot/imported/sumatera_house_blur.jpg-49cf2b25d54a01e69427c9401f54311e.ctex::
+sumatera_house_clear.jpg::CompressedTexture2D::4748255833184280055::1764030610::1764036337::1::::<><><>0<>0<>2ccfb4e7ba0cccaa86bc95342b0a9089<>res://.godot/imported/sumatera_house_clear.jpg-4219cca8daa37c41f1d0c0314a64e130.ctex::
+wayang_arjuna.jpg::CompressedTexture2D::8795918108052251045::1764158175::1764158180::1::::<><><>0<>0<>8ae6d8a427a355db718b1914a9aba4ed<>res://.godot/imported/wayang_arjuna.jpg-97ef000a2fdf83d98dd821f15e030ce3.ctex::
+::res://assets/images/ui/::1764166214
+Ara tombol sumatra.png::CompressedTexture2D::4226531376843343135::1762993376::1762993469::1::::<><><>0<>0<>04deb45486f1c6c8093a7446b114edc7<>res://.godot/imported/Ara tombol sumatra.png-fbd1c446edbd0aa49b684cda5c0123c6.ctex::
+area tombol jawa.png::CompressedTexture2D::6076418781145842021::1762993399::1762993469::1::::<><><>0<>0<>dcba4f76881377b843b5e8948e488985<>res://.godot/imported/area tombol jawa.png-b00ad25768e79873ea7c25c1a708a1b6.ctex::
+area tombol kalimantan.png::CompressedTexture2D::3733367988299425780::1762993387::1762993469::1::::<><><>0<>0<>4b5c6ad605ee6e55bed9e749a5533f7c<>res://.godot/imported/area tombol kalimantan.png-54f3c0dfecbe098c3ff7e69a0231c0be.ctex::
+area tombol papua.png::CompressedTexture2D::6397303741869068823::1762993409::1762993469::1::::<><><>0<>0<>9921d883ff124749136b4fe61b8b1a2e<>res://.godot/imported/area tombol papua.png-730b76e95d8264fb5a5a5041b7494f52.ctex::
+area tombol sulawese.png::CompressedTexture2D::1919999273008725268::1762994007::1762994008::1::::<><><>0<>0<>29da5761a3da782786f50a8aa1fcff91<>res://.godot/imported/area tombol sulawese.png-c145aef1ff5f4dfc407fc5b9b7b25393.ctex::
+button huve.png::CompressedTexture2D::602709285633776571::1762989442::1762989450::1::::<><><>0<>0<>25d3defa8388f230c6ed94e5f3a859ff<>res://.godot/imported/button huve.png-fb3826d38171d62e7ed34e949ecafae8.ctex::
+Group 2.png::CompressedTexture2D::6600312895562404358::1762956431::1762963759::1::::<><><>0<>0<>d49db63242f794a917467f5ff78f68ac<>res://.godot/imported/Group 2.png-58438ee728985840318930de2271e0d1.ctex::
+indicator_locked.png::CompressedTexture2D::1692018843551801388::1762991118::1764091139::1::::<><><>0<>0<>730b17e262946a293addf18cd4fee926<>res://.godot/imported/indicator_locked.png-83721e5e19172e875e08e21aa25734ab.ctex::
+indicator_unlocked.png::CompressedTexture2D::6546474500747403904::1762991138::1764091104::1::::<><><>0<>0<>aabb1525ff8946af597eae7d348d0854<>res://.godot/imported/indicator_unlocked.png-4e8fe7b2adb8944d0ecc6505b0a8daf3.ctex::
+Pulau Terbuka.jpg::CompressedTexture2D::3738983741922029179::1762990154::1762991155::1::::<><><>0<>0<>1e0de9127a5fc67d5ba8eed194edc41f<>res://.godot/imported/Pulau Terbuka.jpg-e72c7a605333e5a01e36aad2478a68c6.ctex::
+Tombol benar.png::CompressedTexture2D::4074564229029057748::1763992624::1763992628::1::::<><><>0<>0<>06c7dc3efa7700bc081769c2ef15775b<>res://.godot/imported/Tombol benar.png-9fda9bdfb399d6fc7d7b2698c34786db.ctex::
+tombol jawab trasnparan.png::CompressedTexture2D::2062410109945105777::1764033570::1764033573::1::::<><><>0<>0<>7c905473fafa6e4abe3ef93d94d866a1<>res://.godot/imported/tombol jawab trasnparan.png-faf90e5f6a879df5bb44d6a92f6c9ba0.ctex::
+tombol salah.png::CompressedTexture2D::5191446016741487570::1763994961::1763994962::1::::<><><>0<>0<>4307a99c52ce43720807979f3e89eea5<>res://.godot/imported/tombol salah.png-5fe4081cf7432e0c6c75991d49538bed.ctex::
+Tumbul jawab.png::CompressedTexture2D::7399066412980444352::1764033367::1764033370::1::::<><><>0<>0<>8c33f7cd84c3db18d89fd5fe3e0fb248<>res://.godot/imported/Tumbul jawab.png-a1d4e1a0fbac8e2b1d7177263e2b9f22.ctex::
+—Pngtree—sound waves equalizer audio radio_9070974.png::CompressedTexture2D::9032508200659215261::1764122978::1764123055::1::::<><><>0<>0<>1df81fcc1d7acfc6f06b6dc973afacf3<>res://.godot/imported/—Pngtree—sound waves equalizer audio radio_9070974.png-ea7e022ded6d109ce9cc1a6108dc125a.ctex::
+::res://data/::1762934602
+::res://scenes/::1767192936
+ClimaxScene.tscn::PackedScene::819694489224486727::1762936717::0::1::::<><><>0<>0<><>::
+EndingScene.tscn::PackedScene::6871563402668875428::1762936735::0::1::::<><><>0<>0<><>::
+Level2_Jawa.tscn::PackedScene::7549182641983130786::1767189118::0::1::::<><><>0<>0<><>::uid://eaee63kb70w6::::res://scripts/Level2_Jawa.gd<>uid://cum37sv1qdt8y::::res://assets/images/backgrounds/Gemini_Generated_Image_3ku69v3ku69v3ku6.png
+Level2_Kalimantan.tscn::PackedScene::5095644234767116455::1767191137::0::1::::<><><>0<>0<><>::uid://3wdmguw1njb::::res://scripts/Level2_Kalimantan.gd<>uid://c3wsup6dhyvn1::::res://assets/images/backgrounds/Gemini_Generated_Image_nm593knm593knm59.png
+Level2_Papua.tscn::PackedScene::5172313206256006250::1766928717::0::1::::<><><>0<>0<><>::uid://4n1plio4kpoc::::res://scripts/Level2_Papua.gd<>uid://bofn33ofy7ysj::::res://assets/images/backgrounds/Gemini_Generated_Image_9h59vc9h59vc9h59.png
+Level2_Sulawesi.tscn::PackedScene::6310821571732490483::1766911109::0::1::::<><><>0<>0<><>::uid://7t2t8sigrxa2::::res://scripts/Level2_Sulawesi.gd<>uid://btl7owm1esku6::::res://assets/images/backgrounds/Gemini_Generated_Image_bilcfvbilcfvbilc.png
+Level2_Sumatra.tscn::PackedScene::7801999187862364866::1766904806::0::1::::<><><>0<>0<><>::uid://dfhnryhhusi3d::::res://scripts/Level2_Sumatra.gd<>uid://c5jgkek6e8npj::::res://assets/images/backgrounds/Gemini_Generated_Image_51eeeu51eeeu51ee.png<>uid://bc5uv2asmfsds::::res://assets/images/puzzles/sumatera_house_blur.jpg<>uid://ddofspqnnxxnc::::res://assets/images/ui/Tumbul jawab.png<>uid://4nbufyxxsjdh::::res://assets/images/ui/tombol jawab trasnparan.png
+Main.tscn::PackedScene::7515214105764097512::1764091196::0::1::::<><><>0<>0<><>::uid://dlkjn4wddnl7u::::res://scripts/Main.gd
+MapScene.tscn::PackedScene::9001071994664495105::1767192187::0::1::::<><><>0<>0<><>::uid://d3tas2g0bgi3v::::res://scripts/MapScene.gd<>uid://btjgrspgbmc88::::res://assets/images/ui/Pulau Terbuka.jpg<>uid://b1hmmbslj7sol::::res://assets/images/ui/Ara tombol sumatra.png<>uid://cstpy2mhmnej2::::res://assets/images/ui/area tombol jawa.png<>uid://btgqa4i85a8sm::::res://assets/images/ui/area tombol kalimantan.png<>uid://2mcdwju5dxaa::::res://assets/images/ui/area tombol sulawese.png<>uid://cxe5wmu5cyky6::::res://assets/images/ui/area tombol papua.png<>uid://crou71spchtgs::::res://assets/images/characters/Gemini_Generated_Image_w8td87w8td87w8td-removebg-preview.png
+OpeningScene.tscn::PackedScene::976227879811244473::1764069052::0::1::::<><><>0<>0<><>::uid://dw1kusvyv1xsy::::res://scripts/OpeningScane.gd<>uid://ddsmo8jv718vm::::res://assets/images/backgrounds/background.png<>uid://c1bigotj5n4de::::res://assets/images/ui/Group 2.png<>uid://it7sffrw0ipv::::res://assets/images/ui/button huve.png
+Pulau_Jawa.tscn::PackedScene::2136187225751039422::1764128897::0::1::::<><><>0<>0<><>::uid://bblu5ru1d57r0::::res://scripts/Pulau_Jawa.gd<>uid://cum37sv1qdt8y::::res://assets/images/backgrounds/Gemini_Generated_Image_3ku69v3ku69v3ku6.png<>uid://y2pwayeqddri::::res://assets/audio/gundul_gundul_pacul.mp3<>uid://d1xodcrbkb6xl::::res://assets/images/ui/—Pngtree—sound waves equalizer audio radio_9070974.png
+Pulau_Kalimantan.tscn::PackedScene::1665476666639025621::1767174019::0::1::::<><><>0<>0<><>::uid://by1d06mvronag::::res://scripts/Pulau_Kalimantan.gd<>uid://c3wsup6dhyvn1::::res://assets/images/backgrounds/Gemini_Generated_Image_nm593knm593knm59.png<>uid://ddofspqnnxxnc::::res://assets/images/ui/Tumbul jawab.png<>uid://4nbufyxxsjdh::::res://assets/images/ui/tombol jawab trasnparan.png
+Pulau_Papua.tscn::PackedScene::8824834758329672171::1766915161::0::1::::<><><>0<>0<><>::uid://cg0rbyhgrad6k::::res://scripts/Pulau_Papua.gd<>uid://bofn33ofy7ysj::::res://assets/images/backgrounds/Gemini_Generated_Image_9h59vc9h59vc9h59.png<>uid://d1xodcrbkb6xl::::res://assets/images/ui/—Pngtree—sound waves equalizer audio radio_9070974.png
+Pulau_Sulawesi.tscn::PackedScene::1621885756914108972::1767192936::0::1::::<><><>0<>0<><>::uid://dudljicnjejna::::res://scripts/Pulau_Sulawesi.gd<>uid://btl7owm1esku6::::res://assets/images/backgrounds/Gemini_Generated_Image_bilcfvbilcfvbilc.png<>uid://byb0qibwmgt53::::res://assets/images/ui/Tombol benar.png<>uid://cf71mff43pos5::::res://assets/images/ui/tombol salah.png
+Pulau_Sumatra.tscn::PackedScene::4866896979152415474::1764000458::0::1::::<><><>0<>0<><>::uid://cctxqc01jtxly::::res://scripts/Pulau_Sumatra.gd<>uid://c5jgkek6e8npj::::res://assets/images/backgrounds/Gemini_Generated_Image_51eeeu51eeeu51ee.png<>uid://byb0qibwmgt53::::res://assets/images/ui/Tombol benar.png<>uid://cf71mff43pos5::::res://assets/images/ui/tombol salah.png
+::res://scripts/::1767195941
+ClimaxScene.gd::GDScript::865565572710154534::1762937005::0::1::::<>Node<><>0<>0<><>::
+EndingScene.gd::GDScript::3329283164851557527::1762937029::0::1::::<>Node<><>0<>0<><>::
+Level2_Jawa.gd::GDScript::281007057634171071::1767189463::0::1::::<>Node2D<><>0<>0<><>::
+Level2_Kalimantan.gd::GDScript::59144348824423959::1767174019::0::1::::<>Control<><>0<>0<><>::
+Level2_Papua.gd::GDScript::2063919395816765178::1767188898::0::1::::<>Control<><>0<>0<><>::
+Level2_Sulawesi.gd::GDScript::2286941224082290015::1767193927::0::1::::<>Control<><>0<>0<><>::
+Level2_Sumatra.gd::GDScript::7525477864669757515::1764165378::0::1::::<>Control<><>0<>0<><>::
+LevelBase.gd::GDScript::4887658434952388323::1762936839::0::1::::<>Node<><>0<>0<><>::
+Main.gd::GDScript::7952554334197610360::1767193927::0::1::::<>Node<><>0<>0<><>::
+MapScene.gd::GDScript::9163806423098382157::1767195941::0::1::::<>Control<><>0<>0<><>::
+OpeningScane.gd::GDScript::8757734297508090040::1764062525::0::1::::<>Control<><>0<>0<><>::
+Pulau_Jawa.gd::GDScript::2480586521277854651::1767190648::0::1::::<>Node2D<><>0<>0<><>::
+Pulau_Kalimantan.gd::GDScript::4124855196176288602::1767191137::0::1::::<>Control<><>0<>0<><>::
+Pulau_Papua.gd::GDScript::5246619119406194756::1767194173::0::1::::<>Node2D<><>0<>0<><>::
+Pulau_Sulawesi.gd::GDScript::8569916440046970926::1766895216::0::1::::<>Control<><>0<>0<><>::
+Pulau_Sumatra.gd::GDScript::4953867440386442130::1764164936::0::1::::<>Control<><>0<>0<><>::

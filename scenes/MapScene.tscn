@@ -1,0 +1,283 @@
+[gd_scene load_steps=18 format=3 uid="uid://d1iglt3bw8jn2"]
+
+[ext_resource type="Script" uid="uid://d3tas2g0bgi3v" path="res://scripts/MapScene.gd" id="1_y2hrc"]
+[ext_resource type="Texture2D" uid="uid://btjgrspgbmc88" path="res://assets/images/ui/Pulau Terbuka.jpg" id="2_wikxs"]
+[ext_resource type="Texture2D" uid="uid://b1hmmbslj7sol" path="res://assets/images/ui/Ara tombol sumatra.png" id="3_wikxs"]
+[ext_resource type="Texture2D" uid="uid://cstpy2mhmnej2" path="res://assets/images/ui/area tombol jawa.png" id="4_j1nvq"]
+[ext_resource type="Texture2D" uid="uid://btgqa4i85a8sm" path="res://assets/images/ui/area tombol kalimantan.png" id="5_1ddn7"]
+[ext_resource type="Texture2D" uid="uid://2mcdwju5dxaa" path="res://assets/images/ui/area tombol sulawese.png" id="6_bnqbi"]
+[ext_resource type="Texture2D" uid="uid://cxe5wmu5cyky6" path="res://assets/images/ui/area tombol papua.png" id="7_jqekx"]
+[ext_resource type="Texture2D" uid="uid://crou71spchtgs" path="res://assets/images/characters/Gemini_Generated_Image_w8td87w8td87w8td-removebg-preview.png" id="10_w8wlc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8wlc"]
+bg_color = Color(0, 0, 0, 0.60784316)
+border_color = Color(0.93374985, 0.79048276, 0.19543895, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w8wlc"]
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rv0pg"]
+bg_color = Color(0.019607844, 0.019607844, 0.019607844, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_prey2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mvot7"]
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_jylts"]
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_60j6u"]
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_s6fll"]
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_rv0pg"]
+font_size = 14
+
+[node name="MapScene" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y2hrc")
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+offset_top = 2.0
+offset_right = 1156.0
+offset_bottom = 655.0
+texture = ExtResource("2_wikxs")
+expand_mode = 1
+
+[node name="InteractiveAreas" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sumatra" type="TextureButton" parent="Control/InteractiveAreas"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 60.0
+offset_right = 338.0
+offset_bottom = 362.0
+texture_normal = ExtResource("3_wikxs")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Jawa" type="TextureButton" parent="Control/InteractiveAreas"]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 360.0
+offset_right = 524.0
+offset_bottom = 434.0
+texture_normal = ExtResource("4_j1nvq")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Kalimantan" type="TextureButton" parent="Control/InteractiveAreas"]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 103.0
+offset_right = 604.0
+offset_bottom = 317.0
+texture_normal = ExtResource("5_1ddn7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Sulawesi" type="TextureButton" parent="Control/InteractiveAreas"]
+layout_mode = 0
+offset_left = 597.0
+offset_top = 169.0
+offset_right = 766.0
+offset_bottom = 356.0
+texture_normal = ExtResource("6_bnqbi")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Papua" type="TextureButton" parent="Control/InteractiveAreas"]
+layout_mode = 0
+offset_left = 887.0
+offset_top = 222.0
+offset_right = 1155.0
+offset_bottom = 439.0
+texture_normal = ExtResource("7_jqekx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="IslandsOverlay" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sumatra" type="TextureButton" parent="Control/IslandsOverlay"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 197.0
+offset_right = 179.0
+offset_bottom = 237.0
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Jawa" type="TextureButton" parent="Control/IslandsOverlay"]
+layout_mode = 0
+offset_left = 365.0
+offset_top = 373.0
+offset_right = 397.0
+offset_bottom = 413.0
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Kalimantan" type="TextureButton" parent="Control/IslandsOverlay"]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 209.0
+offset_right = 491.0
+offset_bottom = 249.0
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Sulawesi" type="TextureButton" parent="Control/IslandsOverlay"]
+layout_mode = 0
+offset_left = 628.0
+offset_top = 242.0
+offset_right = 660.0
+offset_bottom = 282.0
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Papua" type="TextureButton" parent="Control/IslandsOverlay"]
+layout_mode = 0
+offset_left = 1092.0
+offset_top = 299.0
+offset_right = 1125.0
+offset_bottom = 339.0
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="NPCContainer" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NPCSprite" type="TextureRect" parent="Control/NPCContainer"]
+layout_mode = 0
+offset_left = 922.0
+offset_top = 397.0
+offset_right = 1191.0
+offset_bottom = 666.0
+texture = ExtResource("10_w8wlc")
+expand_mode = 1
+
+[node name="DialogContainer" type="Panel" parent="Control/NPCContainer"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 563.0
+offset_right = 1154.0
+offset_bottom = 656.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w8wlc")
+
+[node name="DialogText" type="Label" parent="Control/NPCContainer/DialogContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = -4.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Selamat Datang Penjelajah..."
+label_settings = SubResource("LabelSettings_w8wlc")
+
+[node name="ContinueButton" type="Button" parent="Control/NPCContainer/DialogContainer"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -123.0
+offset_top = -37.0
+offset_right = -5.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Selanjutnya>>"
+flat = true
+autowrap_mode = 1
+
+[node name="UILayer" type="CanvasLayer" parent="Control"]
+
+[node name="StatusContainer" type="Panel" parent="Control/UILayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 163.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rv0pg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/UILayer/StatusContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="Control/UILayer/StatusContainer/VBoxContainer"]
+layout_mode = 2
+text = "STATUS PENJELAJAH"
+label_settings = SubResource("LabelSettings_prey2")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HSeparator1" type="HSeparator" parent="Control/UILayer/StatusContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="RankLabel" type="Label" parent="Control/UILayer/StatusContainer/VBoxContainer"]
+layout_mode = 2
+text = "Peringkat: Pemula"
+label_settings = SubResource("LabelSettings_mvot7")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="StarsLabel" type="Label" parent="Control/UILayer/StatusContainer/VBoxContainer"]
+layout_mode = 2
+text = "Bintang: 0/25"
+label_settings = SubResource("LabelSettings_jylts")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PointsLabel" type="Label" parent="Control/UILayer/StatusContainer/VBoxContainer"]
+layout_mode = 2
+text = "Poin: 0"
+label_settings = SubResource("LabelSettings_60j6u")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="EnergyLabel" type="Label" parent="Control/UILayer/StatusContainer/VBoxContainer"]
+layout_mode = 2
+text = "Energi: 100/100"
+label_settings = SubResource("LabelSettings_s6fll")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ProgressLabel" type="Label" parent="Control/UILayer/StatusContainer/VBoxContainer"]
+layout_mode = 2
+text = "Progress: 0/5 Pulau"
+label_settings = SubResource("LabelSettings_rv0pg")
+horizontal_alignment = 2
+vertical_alignment = 1

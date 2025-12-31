@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://cv6akrrko030j"]
+
+[ext_resource type="Script" uid="uid://7t2t8sigrxa2" path="res://scripts/Level2_Sulawesi.gd" id="1_d0yoq"]
+[ext_resource type="Texture2D" uid="uid://btl7owm1esku6" path="res://assets/images/backgrounds/Gemini_Generated_Image_bilcfvbilcfvbilc.png" id="2_ufjwg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i8ol3"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cqven"]
+font_size = 18
+font_color = Color(0.09239707, 0.09239706, 0.09239706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0yoq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufjwg"]
+
+[node name="Level2Sulawesi" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d0yoq")
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -10.0
+offset_right = 1156.0
+offset_bottom = 1138.0
+texture = ExtResource("2_ufjwg")
+stretch_mode = 6
+
+[node name="UI" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Header" type="Label" parent="Control/UI"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 4.0
+offset_right = 768.0
+offset_bottom = 49.0
+text = "PULAU SULAWESI - LEVEL 2"
+label_settings = SubResource("LabelSettings_i8ol3")
+
+[node name="StoryDescription" type="Label" parent="Control/UI"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 41.0
+offset_right = 860.0
+offset_bottom = 154.0
+text = "Coto Makassar adalah sup daging sapi khas Sulawesi Selatan yang kaya rempah.
+  Susun gambar sesuai urutan pembuatan yang benar!"
+label_settings = SubResource("LabelSettings_cqven")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="SequenceContainer" type="Panel" parent="Control/UI"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 149.0
+offset_right = 467.0
+offset_bottom = 489.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d0yoq")
+
+[node name="ImageContainer" type="Panel" parent="Control/UI"]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 152.0
+offset_right = 751.0
+offset_bottom = 582.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ufjwg")
+
+[node name="ResultContainer" type="Panel" parent="Control/UI"]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 160.0
+offset_right = 1133.0
+offset_bottom = 582.0
+
+[node name="ResultLabel" type="Label" parent="Control/UI/ResultContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -174.5
+offset_right = 177.5
+offset_bottom = 422.0
+grow_horizontal = 2
+text = "Kamu berhasil menyusun alur pembuatan Coto Makassar"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="NextIslandBtn" type="Button" parent="Control/UI"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 603.0
+offset_right = 723.0
+offset_bottom = 634.0
+text = "Kembali ke Peta"
+
+[node name="RestartBtn" type="Button" parent="Control/UI"]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 601.0
+offset_right = 566.0
+offset_bottom = 632.0
+text = "Coba Lagi"
+
+[connection signal="pressed" from="Control/UI/NextIslandBtn" to="Control" method="_on_next_island_btn_pressed"]
+[connection signal="pressed" from="Control/UI/RestartBtn" to="Control" method="_on_restart_btn_pressed"]

@@ -1,0 +1,189 @@
+[gd_scene load_steps=12 format=3 uid="uid://cbltc2aftdj8e"]
+
+[ext_resource type="Script" uid="uid://cctxqc01jtxly" path="res://scripts/Pulau_Sumatra.gd" id="1_6lean"]
+[ext_resource type="Texture2D" uid="uid://c5jgkek6e8npj" path="res://assets/images/backgrounds/Gemini_Generated_Image_51eeeu51eeeu51ee.png" id="2_s7xgb"]
+[ext_resource type="Texture2D" uid="uid://byb0qibwmgt53" path="res://assets/images/ui/Tombol benar.png" id="3_gtg1f"]
+[ext_resource type="Texture2D" uid="uid://cf71mff43pos5" path="res://assets/images/ui/tombol salah.png" id="4_0oqxl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gtg1f"]
+font_size = 32
+font_color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe4gx"]
+bg_color = Color(0, 0, 0, 0.19215687)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.9857381, 0.7669428, 1.1551381e-06, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_qe4gx"]
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgy85"]
+bg_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_okadn"]
+font_size = 23
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtg1f"]
+bg_color = Color(0, 0, 0, 0.23921569)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_0oqxl"]
+font_size = 18
+
+[node name="PulauSumatra" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [539.0]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6lean")
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+offset_left = -2.0
+offset_top = -5.0
+offset_right = 1162.0
+offset_bottom = 1069.0
+texture = ExtResource("2_s7xgb")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="UI" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="Control/UI"]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 14.0
+offset_right = 767.0
+offset_bottom = 59.0
+text = "PULAU SUMATERA LEVEL 1"
+label_settings = SubResource("LabelSettings_gtg1f")
+
+[node name="QuestionContainer" type="Panel" parent="Control/UI"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 116.0
+offset_right = 888.0
+offset_bottom = 407.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qe4gx")
+
+[node name="QuestionText" type="Label" parent="Control/UI/QuestionContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pernyataan akan muncul di sini..."
+label_settings = SubResource("LabelSettings_qe4gx")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TimerBar" type="ProgressBar" parent="Control/UI"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 534.0
+offset_top = 438.0
+offset_right = 591.0
+offset_bottom = 465.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_rgy85")
+value = 100.0
+
+[node name="TimerLabel" type="Label" parent="Control/UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.5
+offset_left = 548.0
+offset_top = 477.0
+offset_right = 577.0
+offset_bottom = 505.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "5s"
+label_settings = SubResource("LabelSettings_okadn")
+
+[node name="TrueButton" type="TextureButton" parent="Control/UI"]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 433.0
+offset_right = 495.36462
+offset_bottom = 487.0
+texture_normal = ExtResource("3_gtg1f")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="FalseButton" type="TextureButton" parent="Control/UI"]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 436.0
+offset_right = 767.0
+offset_bottom = 486.0
+texture_normal = ExtResource("4_0oqxl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ResultContainer" type="Panel" parent="Control/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 110.0
+offset_top = 520.0
+offset_right = 1037.0
+offset_bottom = 634.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gtg1f")
+
+[node name="ResultText" type="Label" parent="Control/UI/ResultContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hasil akan muncul di sini..."
+label_settings = SubResource("LabelSettings_0oqxl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextButton" type="Button" parent="Control/UI/ResultContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8627451, 1, 0, 1)
+text = "Lanjutkan"
+flat = true

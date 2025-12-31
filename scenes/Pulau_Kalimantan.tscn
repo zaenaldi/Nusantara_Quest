@@ -1,0 +1,148 @@
+[gd_scene load_steps=8 format=3 uid="uid://xy1fl6jw70i8"]
+
+[ext_resource type="Script" uid="uid://by1d06mvronag" path="res://scripts/Pulau_Kalimantan.gd" id="1_24gkg"]
+[ext_resource type="Texture2D" uid="uid://c3wsup6dhyvn1" path="res://assets/images/backgrounds/Gemini_Generated_Image_nm593knm593knm59.png" id="2_nk8pg"]
+[ext_resource type="Texture2D" uid="uid://ddofspqnnxxnc" path="res://assets/images/ui/Tumbul jawab.png" id="3_awqg0"]
+[ext_resource type="Texture2D" uid="uid://4nbufyxxsjdh" path="res://assets/images/ui/tombol jawab trasnparan.png" id="4_y2e0u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ovnir"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pg3lh"]
+font_size = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu23y"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="PulauKalimantan" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [651.0]
+metadata/_edit_vertical_guides_ = [1158.0]
+
+[node name="PulauKalimantan" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_24gkg")
+
+[node name="TextureRect" type="TextureRect" parent="PulauKalimantan"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -365.0
+offset_right = 1156.0
+offset_bottom = 790.0
+texture = ExtResource("2_nk8pg")
+
+[node name="UI" type="Control" parent="PulauKalimantan"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Header" type="Label" parent="PulauKalimantan/UI"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 8.0
+offset_right = 812.0
+offset_bottom = 53.0
+text = "PULAU KALIMANTAN - LEVEL 1"
+label_settings = SubResource("LabelSettings_ovnir")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="QuestionContainer" type="Panel" parent="PulauKalimantan/UI"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 95.0
+offset_right = 918.0
+offset_bottom = 239.0
+
+[node name="QuestionText" type="Label" parent="PulauKalimantan/UI/QuestionContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pertanyaan akan muncul di sini"
+label_settings = SubResource("LabelSettings_pg3lh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HintContainer" type="Panel" parent="PulauKalimantan/UI"]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 258.0
+offset_right = 839.0
+offset_bottom = 298.0
+
+[node name="HintLabel" type="Label" parent="PulauKalimantan/UI/HintContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hint: Akan muncul di sini"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnswerInput" type="LineEdit" parent="PulauKalimantan/UI"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 321.0
+offset_right = 733.0
+offset_bottom = 359.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_pu23y")
+text = "Ketik jawaban Anda di sini..."
+alignment = 1
+
+[node name="SubmitButton" type="TextureButton" parent="PulauKalimantan/UI"]
+layout_mode = 0
+offset_left = 756.0
+offset_top = 322.0
+offset_right = 859.0276
+offset_bottom = 359.0
+texture_normal = ExtResource("3_awqg0")
+texture_hover = ExtResource("4_y2e0u")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TimerLabel" type="Label" parent="PulauKalimantan/UI"]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 371.0
+offset_right = 633.0
+offset_bottom = 394.0
+text = "Waktu: 45 detik"
+
+[node name="ResultContainer" type="Panel" parent="PulauKalimantan/UI"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 405.0
+offset_right = 1075.0
+offset_bottom = 599.0
+
+[node name="ResultText" type="Label" parent="PulauKalimantan/UI/ResultContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -99.5
+offset_right = 99.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Hasil akan muncul di sini"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextButton" type="Button" parent="PulauKalimantan/UI"]
+visible = false
+layout_mode = 0
+offset_left = 496.0
+offset_top = 609.0
+offset_right = 634.0
+offset_bottom = 640.0
+text = "Lanjut ke Level 2"

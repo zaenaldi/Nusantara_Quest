@@ -1,0 +1,211 @@
+[gd_scene load_steps=11 format=3 uid="uid://djfl10p68co7k"]
+
+[ext_resource type="Script" uid="uid://dfhnryhhusi3d" path="res://scripts/Level2_Sumatra.gd" id="1_jwk1m"]
+[ext_resource type="Texture2D" uid="uid://c5jgkek6e8npj" path="res://assets/images/backgrounds/Gemini_Generated_Image_51eeeu51eeeu51ee.png" id="2_86cii"]
+[ext_resource type="Texture2D" uid="uid://bc5uv2asmfsds" path="res://assets/images/puzzles/sumatera_house_blur.jpg" id="3_ixtfo"]
+[ext_resource type="Texture2D" uid="uid://ddofspqnnxxnc" path="res://assets/images/ui/Tumbul jawab.png" id="4_1f2qx"]
+[ext_resource type="Texture2D" uid="uid://4nbufyxxsjdh" path="res://assets/images/ui/tombol jawab trasnparan.png" id="5_cuywh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jwk1m"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ixtfo"]
+font_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5g4uj"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wy5ri"]
+bg_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i36xs"]
+bg_color = Color(0, 0, 0, 0)
+
+[node name="Level2Sumatra" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [647.0]
+
+[node name="Level2Sumatra" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jwk1m")
+
+[node name="Background" type="TextureRect" parent="Level2Sumatra"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -10.0
+offset_right = 1159.0
+offset_bottom = 1024.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_86cii")
+stretch_mode = 6
+
+[node name="UI" type="Control" parent="Level2Sumatra"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="Level2Sumatra/UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 354.5
+offset_top = 4.0
+offset_right = 783.5
+offset_bottom = 49.0
+grow_horizontal = 2
+text = "PULAU SUMATERA - LEVEL 2"
+label_settings = SubResource("LabelSettings_jwk1m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PuzzleContainer" type="Panel" parent="Level2Sumatra/UI"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 252.0
+offset_top = 90.0
+offset_right = 872.0
+offset_bottom = 384.0
+
+[node name="InstructionText" type="Label" parent="Level2Sumatra/UI/PuzzleContainer"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 4.0
+offset_bottom = 27.0
+grow_horizontal = 2
+text = "Susun huruf acak berikut hingga membentuk nama rumah adat khas Riau"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ScrambledLetters" type="Label" parent="Level2Sumatra/UI/PuzzleContainer"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "S R A J B H L E A U K A T M E O U K S R A H T"
+label_settings = SubResource("LabelSettings_ixtfo")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HintImage" type="TextureRect" parent="Level2Sumatra/UI/PuzzleContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.68375
+offset_top = -90.5
+offset_right = 135.68375
+offset_bottom = 90.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ixtfo")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="AnswerInput" type="LineEdit" parent="Level2Sumatra/UI"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 446.0
+offset_right = 700.0
+offset_bottom = 508.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5g4uj")
+text = "Ketik jawaban Anda di sini..."
+alignment = 1
+
+[node name="TimerBar" type="ProgressBar" parent="Level2Sumatra/UI"]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 397.0
+offset_right = 546.0
+offset_bottom = 427.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_wy5ri")
+value = 100.0
+
+[node name="TimerLabel" type="Label" parent="Level2Sumatra/UI"]
+layout_mode = 0
+offset_left = 554.0
+offset_top = 401.0
+offset_right = 664.0
+offset_bottom = 424.0
+text = "Waktu : 60s"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SubmitButton" type="TextureButton" parent="Level2Sumatra/UI"]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 453.0
+offset_right = 843.6515
+offset_bottom = 501.0
+texture_normal = ExtResource("4_1f2qx")
+texture_pressed = ExtResource("5_cuywh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ResultContainer" type="Panel" parent="Level2Sumatra/UI"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 107.0
+offset_top = 528.0
+offset_right = 1001.0
+offset_bottom = 635.64185
+theme_override_styles/panel = SubResource("StyleBoxFlat_i36xs")
+
+[node name="ResultText" type="Label" parent="Level2Sumatra/UI/ResultContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Result akan muncul di sini..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NextButton" type="Button" parent="Level2Sumatra/UI/ResultContainer"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8695261, 0.92930895, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Selanjutnya"
+flat = true

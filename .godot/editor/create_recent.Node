@@ -1,0 +1,14 @@
+Control
+Button
+Label
+Panel
+GridContainer
+CanvasLayer
+TextureRect
+Label      - Matches the "text" keyword.
+RichTextLabel
+TextureButton
+LineEdit
+HBoxContainer
+Node2D
+ProgressBar

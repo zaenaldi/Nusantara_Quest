@@ -1,0 +1,116 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfxriix5uxb4u"]
+
+[ext_resource type="Script" uid="uid://4n1plio4kpoc" path="res://scripts/Level2_Papua.gd" id="1_05uhf"]
+[ext_resource type="Texture2D" uid="uid://bofn33ofy7ysj" path="res://assets/images/backgrounds/Gemini_Generated_Image_9h59vc9h59vc9h59.png" id="2_en4o1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_05uhf"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_en4o1"]
+bg_color = Color(0.15686275, 0.15686275, 0.15686275, 0)
+
+[node name="Level2Papua" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_05uhf")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -105.0
+offset_right = 1161.0
+offset_bottom = 730.0
+texture = ExtResource("2_en4o1")
+expand_mode = 1
+
+[node name="UI" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Header" type="Label" parent="Control/UI"]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 8.0
+offset_right = 784.0
+offset_bottom = 53.0
+text = "PULAU PAPUA - LEVEL 2"
+label_settings = SubResource("LabelSettings_05uhf")
+
+[node name="TimerLabel" type="Label" parent="Control/UI"]
+layout_mode = 0
+offset_left = 638.0
+offset_top = 379.0
+offset_right = 738.0
+offset_bottom = 402.0
+text = "Waktu: 00:00"
+
+[node name="MovesLabel" type="Label" parent="Control/UI"]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 379.0
+offset_right = 594.0
+offset_bottom = 402.0
+text = " Gerakan: 0"
+
+[node name="GameContainer" type="Panel" parent="Control/UI"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 77.0
+offset_right = 962.0
+offset_bottom = 371.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_en4o1")
+
+[node name="GridContainer" type="GridContainer" parent="Control/UI/GameContainer"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResultContainer" type="Panel" parent="Control/UI"]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 414.0
+offset_right = 876.0
+offset_bottom = 600.0
+
+[node name="ResultLabel" type="Label" parent="Control/UI/ResultContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "\"\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextIslandBtn" type="Button" parent="Control/UI"]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 604.0
+offset_right = 749.0
+offset_bottom = 635.0
+text = "kembali Ke map"
+
+[node name="RestartBtn" type="Button" parent="Control/UI"]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 604.0
+offset_right = 555.0
+offset_bottom = 635.0
+text = "Coba Lagi"
+
+[connection signal="pressed" from="Control/UI/NextIslandBtn" to="Control" method="_on_next_island_btn_pressed"]
+[connection signal="pressed" from="Control/UI/RestartBtn" to="Control" method="_on_restart_btn_pressed"]

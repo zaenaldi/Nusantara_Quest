@@ -1,0 +1,199 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxy20epmlmidv"]
+
+[ext_resource type="Script" uid="uid://cg0rbyhgrad6k" path="res://scripts/Pulau_Papua.gd" id="1_owhsj"]
+[ext_resource type="Texture2D" uid="uid://bofn33ofy7ysj" path="res://assets/images/backgrounds/Gemini_Generated_Image_9h59vc9h59vc9h59.png" id="2_41xkp"]
+[ext_resource type="Texture2D" uid="uid://d1xodcrbkb6xl" path="res://assets/images/ui/—Pngtree—sound waves equalizer audio radio_9070974.png" id="3_t7x4i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kolo4"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hawv"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9227366, 0.7983534, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vpjg"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_l8hd4"]
+
+[node name="PulauPapua" type="Node2D"]
+script = ExtResource("1_owhsj")
+metadata/_edit_vertical_guides_ = [1155.0]
+metadata/_edit_horizontal_guides_ = [648.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -5.0
+offset_top = -181.0
+offset_right = 1163.0
+offset_bottom = 843.0
+texture = ExtResource("2_41xkp")
+stretch_mode = 6
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 413.0
+offset_right = 752.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "LEVEL 1 - TEBAK LAGU DAERAH PULAU JAWA"
+label_settings = SubResource("LabelSettings_kolo4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioContainer" type="Panel" parent="UI"]
+layout_mode = 1
+offset_left = 289.0
+offset_top = 109.0
+offset_right = 895.0
+offset_bottom = 199.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5hawv")
+
+[node name="PlayButton" type="Button" parent="UI/AudioContainer"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -25.0
+offset_right = 68.0
+offset_bottom = 25.0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5vpjg")
+text = "Play
+"
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/AudioContainer"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -9.0
+offset_right = -20.0
+offset_bottom = 9.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10
+max_value = 20.0
+
+[node name="WaveAnimation" type="TextureRect" parent="UI/AudioContainer"]
+visible = false
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -29.0
+offset_right = 192.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_t7x4i")
+expand_mode = 1
+
+[node name="AnswerGrid" type="GridContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 339.0
+offset_top = 237.0
+offset_right = 843.0
+offset_bottom = 341.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="JawaBaratBtn" type="Button" parent="UI/AnswerGrid"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+disabled = true
+text = "JAWA BARAT"
+
+[node name="JawaTengahBtn" type="Button" parent="UI/AnswerGrid"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+disabled = true
+text = "JAWA TENGAH"
+
+[node name="YogyakartaBtn" type="Button" parent="UI/AnswerGrid"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+disabled = true
+text = "DI YOGYAKARTA"
+
+[node name="JawaTimurBtn" type="Button" parent="UI/AnswerGrid"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+disabled = true
+text = "JAWA TIMUR
+"
+
+[node name="ResultContainer" type="Panel" parent="UI"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 355.0
+offset_right = 1110.0
+offset_bottom = 591.0
+
+[node name="ResultText" type="Label" parent="UI/ResultContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "\"\"
+"
+label_settings = SubResource("LabelSettings_l8hd4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextLevelBtn" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 598.0
+offset_right = 658.0
+offset_bottom = 629.0
+text = "LANJUT KE LEVEL 2 →"
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="pressed" from="UI/AudioContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="UI/AnswerGrid/JawaBaratBtn" to="." method="_on_jawa_barat_btn_pressed"]
+[connection signal="pressed" from="UI/AnswerGrid/JawaTengahBtn" to="." method="_on_jawa_tengah_btn_pressed"]
+[connection signal="pressed" from="UI/AnswerGrid/YogyakartaBtn" to="." method="_on_yogyakarta_btn_pressed"]
+[connection signal="pressed" from="UI/AnswerGrid/JawaTimurBtn" to="." method="_on_jawa_timur_btn_pressed"]
+[connection signal="pressed" from="UI/NextLevelBtn" to="." method="_on_next_level_btn_pressed"]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://n55lieaj1mx2"]
+
+[ext_resource type="Script" uid="uid://dw1kusvyv1xsy" path="res://scripts/OpeningScane.gd" id="1_6px4b"]
+[ext_resource type="Texture2D" uid="uid://ddsmo8jv718vm" path="res://assets/images/backgrounds/background.png" id="2_6px4b"]
+[ext_resource type="Texture2D" uid="uid://c1bigotj5n4de" path="res://assets/images/ui/Group 2.png" id="3_gv6qo"]
+[ext_resource type="Texture2D" uid="uid://it7sffrw0ipv" path="res://assets/images/ui/button huve.png" id="4_gv6qo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qd5yu"]
+font_size = 60
+outline_size = 20
+outline_color = Color(1, 0.6509804, 0, 1)
+shadow_size = 32
+shadow_color = Color(0, 0, 0, 0.8117647)
+
+[node name="OpeningScene" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6px4b")
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -4.0
+offset_right = 1151.8147
+offset_bottom = 664.0
+texture = ExtResource("2_6px4b")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 302.0
+offset_top = 22.0
+offset_right = 873.0
+offset_bottom = 105.0
+grow_horizontal = 2
+text = "NUSANTARA QUEST"
+label_settings = SubResource("LabelSettings_qd5yu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 439.0
+offset_top = 505.0
+offset_right = 701.0
+offset_bottom = 626.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_gv6qo")
+texture_pressed = ExtResource("3_gv6qo")
+texture_hover = ExtResource("4_gv6qo")
+stretch_mode = 3

@@ -1,0 +1,124 @@
+[gd_scene load_steps=6 format=3 uid="uid://ceumrstmp4kol"]
+
+[ext_resource type="Script" uid="uid://3wdmguw1njb" path="res://scripts/Level2_Kalimantan.gd" id="1_7ipvc"]
+[ext_resource type="Texture2D" uid="uid://c3wsup6dhyvn1" path="res://assets/images/backgrounds/Gemini_Generated_Image_nm593knm593knm59.png" id="2_1il1a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sas75"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33xfq"]
+bg_color = Color(0.29803923, 0.29803923, 0.29803923, 0.65882355)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp6e7"]
+bg_color = Color(0.101960786, 0.05882353, 0.03137255, 0.9019608)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.52156866, 0.2, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Level2Kalimantan" type="Node2D"]
+
+[node name="Level2Kalimantan" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7ipvc")
+
+[node name="Background" type="TextureRect" parent="Level2Kalimantan"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -253.0
+offset_right = 1155.0
+offset_bottom = 771.0
+texture = ExtResource("2_1il1a")
+stretch_mode = 6
+
+[node name="UI" type="Control" parent="Level2Kalimantan"]
+anchors_preset = 0
+offset_right = 1154.0
+offset_bottom = 648.0
+
+[node name="Header" type="Label" parent="Level2Kalimantan/UI"]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 19.0
+offset_right = 819.0
+offset_bottom = 64.0
+text = "PULAU KALIMANTAN - LEVEL 2"
+label_settings = SubResource("LabelSettings_sas75")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="PuzzleText" type="RichTextLabel" parent="Level2Kalimantan/UI"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 163.0
+offset_right = 549.0
+offset_bottom = 222.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_33xfq")
+bbcode_enabled = true
+text = "center]Di Rumah Betang (rumah panjang Dayak)...[/center]"
+fit_content = true
+
+[node name="HintLabel" type="Label" parent="Level2Kalimantan/UI"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 115.0
+offset_right = 572.0
+offset_bottom = 138.0
+text = "Hitung berdasarkan kapasitas kamar maksimal 3 orang per kamar."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="OptionsContainer" type="Panel" parent="Level2Kalimantan/UI"]
+layout_mode = 0
+offset_left = 580.0
+offset_top = 117.0
+offset_right = 1096.0
+offset_bottom = 383.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bp6e7")
+
+[node name="ResultContainer" type="Panel" parent="Level2Kalimantan/UI"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 416.0
+offset_right = 1023.0
+offset_bottom = 595.0
+
+[node name="ResultLabel" type="Label" parent="Level2Kalimantan/UI/ResultContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -153.5
+offset_right = 153.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Kamu berhasil memecahkan teka-teki..."
+
+[node name="NextIslandBtn" type="Button" parent="Level2Kalimantan/UI"]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 606.0
+offset_right = 709.0
+offset_bottom = 637.0
+text = "Kembali ke Peta"
+
+[node name="RestartBtn" type="Button" parent="Level2Kalimantan/UI"]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 606.0
+offset_right = 558.0
+offset_bottom = 637.0
+text = "Coba Lagi"
+
+[connection signal="pressed" from="Level2Kalimantan/UI/NextIslandBtn" to="Level2Kalimantan" method="_on_next_island_btn_pressed"]
+[connection signal="pressed" from="Level2Kalimantan/UI/RestartBtn" to="Level2Kalimantan" method="_on_restart_btn_pressed"]
