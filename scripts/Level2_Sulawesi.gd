@@ -684,18 +684,26 @@ func manual_save_progress(stars: int, knowledge_points: int):
 	else:
 		saved_data["player_data"]["knowledge_points"] = knowledge_points
 	
-	# Check if entire island is completed
+	# 🚨 CRITICAL PERBAIKAN: Check if Sulawesi island is completed (BOTH levels)
 	var level1_completed = saved_data["player_data"]["completed_levels"].get("sulawesi_1", false)
 	var level2_completed = saved_data["player_data"]["completed_levels"].get("sulawesi_2", false)
 	
-	if level1_completed and level2_completed and "sulawesi" not in saved_data["player_data"]["completed_islands"]:
-		saved_data["player_data"]["completed_islands"].append("sulawesi")
-		print("✅ Pulau Sulawesi marked as completed")
+	print("🔍 Checking Sulawesi completion:")
+	print("   Level 1 completed:", level1_completed)
+	print("   Level 2 completed:", level2_completed)
+	print("   Is both completed:", level1_completed and level2_completed)
 	
-	# Unlock next island if Sulawesi is completed
-	if "sulawesi" in saved_data["player_data"]["completed_islands"] and "papua" not in saved_data["player_data"]["unlocked_islands"]:
-		saved_data["player_data"]["unlocked_islands"].append("papua")
-		print("🔓 Pulau Papua unlocked!")
+	# Jika KEDUA level Sulawesi selesai, tandai pulau Sulawesi sebagai completed
+	if level1_completed and level2_completed:
+		if "sulawesi" not in saved_data["player_data"]["completed_islands"]:
+			saved_data["player_data"]["completed_islands"].append("sulawesi")
+			print("✅ PULAU SULAWESI MARKED AS COMPLETED!")
+		
+		# 🚨 CRITICAL: Unlock Papua TIDAK PERLU DITUNGGU PULAU LAIN SELESAI
+		# Papua harus terbuka setelah Sulawesi selesai
+		if "papua" not in saved_data["player_data"]["unlocked_islands"]:
+			saved_data["player_data"]["unlocked_islands"].append("papua")
+			print("🔓 PULAU PAPUA UNLOCKED! (Setelah Sulawesi selesai)")
 	
 	# Save back
 	file = FileAccess.open(save_path, FileAccess.WRITE)
@@ -761,19 +769,49 @@ func _on_next_island_btn_pressed():
 	next_island_btn.disabled = true
 	restart_btn.disabled = true
 	
-	# 🎯 OPTION 1: Gunakan change_scene_to_file - PALING STABIL
-	print("🔄 Using get_tree().change_scene_to_file()")
+	# 🎯 PRIORITAS 1: Gunakan Main.show_map() JIKA ADA
+	if main_node and main_node.has_method("show_map"):
+		print("✅ Using Main.show_map() - akan kembali ke MapScene yang ada")
+		
+		# Pastikan progress tersimpan
+		if not progress_saved and level_completed:
+			var stars = calculate_stars()
+			var knowledge_points = calculate_knowledge_points()
+			manual_save_progress(stars, knowledge_points)
+		
+		# Beri delay kecil untuk memastikan save selesai
+		await get_tree().create_timer(0.1).timeout
+		
+		# Kembali ke map via Main system
+		main_node.show_map()
+		return
 	
-	# Pastikan progress tersimpan
+	# 🎯 PRIORITAS 2: Cari Main node lagi
+	print("🔍 Searching for Main node again...")
+	main_node = get_node_or_null("/root/Main")
+	if main_node and main_node.has_method("show_map"):
+		print("✅ Found Main node, using show_map()")
+		
+		if not progress_saved and level_completed:
+			var stars = calculate_stars()
+			var knowledge_points = calculate_knowledge_points()
+			manual_save_progress(stars, knowledge_points)
+		
+		await get_tree().create_timer(0.1).timeout
+		main_node.show_map()
+		return
+	
+	# 🎯 PRIORITAS 3: Direct change scene HANYA JIKA TIDAK ADA MAIN
+	print("⚠️ No Main node found, using direct scene change")
+	
 	if not progress_saved and level_completed:
 		var stars = calculate_stars()
 		var knowledge_points = calculate_knowledge_points()
 		manual_save_progress(stars, knowledge_points)
 	
-	# Delay kecil untuk memastikan save selesai
 	await get_tree().create_timer(0.1).timeout
 	
-	# Direct scene transition - metode paling reliable
+	# HANYA JIKA TIDAK ADA MAIN, gunakan direct scene change
 	get_tree().change_scene_to_file("res://scenes/MapScene.tscn")
 
 func _on_restart_btn_pressed():

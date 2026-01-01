@@ -81,7 +81,7 @@ var main_node_reference = null
 
 func _ready():
 	print("🎮 Nusantara Quest - Main System STARTING...")
-	print("🎯 Version 3.2 - Enhanced Scene Management")
+	print("🎯 Version 3.3 - Enhanced Scene Management & Progress System")
 	
 	# 🆕 Simpan reference ke diri sendiri
 	main_node_reference = self
@@ -95,6 +95,7 @@ func _ready():
 	print("   Completed islands:", player_data.completed_islands)
 	print("   Total stars:", player_data.total_stars)
 	print("   Player rank:", player_data.rank)
+	print("   Current island:", player_data.current_island)
 	
 	check_daily_reset()
 	show_opening_scene()
@@ -139,7 +140,23 @@ func show_opening_scene():
 	change_scene("res://scenes/OpeningScene.tscn")
 
 func show_map():
-	print("🗺️ Loading MapScene...")
+	print("🗺️ Main.show_map() called - Loading MapScene with cleanup")
+	
+	# 🚨 CRITICAL: Clean up current scene sebelum load MapScene
+	if current_active_scene:
+		print("🧹 Cleaning up current active scene:", current_active_scene.name)
+		if current_active_scene.has_method("cleanup_before_exit"):
+			current_active_scene.cleanup_before_exit()
+		
+		# Remove from container
+		scene_container.remove_child(current_active_scene)
+		current_active_scene.queue_free()
+		current_active_scene = null
+	
+	# Reset Main reference
+	main_node_reference = self
+	
+	# Load MapScene
 	change_scene("res://scenes/MapScene.tscn")
 
 func start_island(island_id: String):
@@ -331,8 +348,7 @@ func complete_level(island_id: String, level: int, stars: int, knowledge_points:
 			print("🎊 ISLAND FULLY COMPLETED - ADDED TO LIST:", island_id)
 			
 			# Unlock next island
-			if level == 2:
-				unlock_next_island(island_id)
+			unlock_next_island(island_id)
 		else:
 			print("ℹ️ Island already in completed list")
 	else:
@@ -631,28 +647,6 @@ func print_scene_tree():
 # 🆕 Method untuk mendapatkan Main node
 func get_main_node():
 	return self
-
-# ================= 🆕 ENHANCED SCENE MANAGEMENT =================
-func show_map_with_cleanup():
-	print("🗺️ show_map_with_cleanup() called")
-	
-	# Cleanup current scene
-	if current_active_scene:
-		print("🧹 Cleaning up current scene:", current_active_scene.name)
-		if current_active_scene.has_method("cleanup_before_exit"):
-			current_active_scene.cleanup_before_exit()
-	
-	# Reset scene container
-	if scene_container:
-		for child in scene_container.get_children():
-			scene_container.remove_child(child)
-			child.queue_free()
-	
-	current_active_scene = null
-	
-	# Load map
-	await get_tree().create_timer(0.1).timeout
-	show_map()
 
 # ================= DEBUG KEYS =================
 func _input(event):
